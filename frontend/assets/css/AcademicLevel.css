@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+/* CONTENTS */
+
+.banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 8%;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem 2rem 1rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.151);
+}
+
+/* DATAS */
+
+.data{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    gap: 1rem;
+    background-color: rgb(238, 253, 255);
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+/* PAGE DETAIL */
+
+.data .page_detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 8%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.data .page_detail button{
+    width: 15%;
+    height: 2.5rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    text-align: center;
+    border: none;
+    border-radius: 0.7rem;
+    background-color: #253275;
+    color: #fffbfb;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.data .page_detail button:hover{
+    box-shadow: 0px 0px 8px #4055c2;
+}
+
+/* FILTERS */
+.data .filters{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 1rem;
+    width: 100%;
+    height: 12%;
+    background-color: #fffbfb;
+    border: none;
+    border-radius: 0.7rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.151);
+    letter-spacing: 0.1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    gap: 1rem;
+}
+
+.data .filters span{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.data .filters span button{
+    width: auto;
+    padding: 0 1rem 0 1rem;
+    height: 2.5rem;
+    text-align: center;
+    border: none;
+    border-radius: 0.7rem;
+    background-color: #253275;
+    color: #fffbfb;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}  
+
+.data .filters span label{
+    padding: 0 1rem 0 1rem;
+    padding-bottom: 1rem;
+}
+
+.data .filters span .filterButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.data .filters span button:hover{
+    box-shadow: 0px 0px 8px #4055c2;
+}
+
+.data .filters span input,
+.data .filters span select{
+    width: 100%;
+    height: 2.5rem;
+    border: none;
+    border-radius: 0.7rem;
+    background-color: #ececec;
+    padding: 0.5rem 1rem 0.5rem 1rem; 
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+/* TABLE */
+
+.data .table_wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;   
+    background-color: #fffbfb;
+    border: none;
+    border-radius: 0.7rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.151);
+    letter-spacing: 0.1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+/* PAGINATION */
+
+.pagination{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    width: 100%;
+    height: 8%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 0.7rem;
+    border: none;
+    border-top-right-radius: 0.7rem;
+    border-top-left-radius: 0.7rem; 
+}
+
+.pagination p{
+    margin-left: 0;
+}
+
+.pagination button{
+    width: 3%;
+    height: 50%;
+    text-align: center;
+    border: none;
+    border-radius: 0.7rem;
+    background-color: #253275;
+    color: #fffbfb;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.pagination button:hover{
+    box-shadow: 0px 0px 8px #4055c2;
+}
+
+/* TABLE */
+
+.tblAcademicLevel{
+    width: 100%;
+    border-collapse: collapse;
+    height: 84%;
+    font-size: 0.9rem;
+}
+
+.tblAcademicLevel thead{
+    background-color: #253275; 
+    color: #fffbfb;
+    text-align: left;
+    height: 8%;
+}
+
+.tblAcademicLevel th,  
+.tblAcademicLevel td {
+    border-top: 1px solid #929292;
+    border-bottom: 1px solid #929292;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 3rem;
+}
+
+.tblAcademicLevel th:nth-child(1), 
+.tblAcademicLevel td:nth-child(1){
+    width: 20%;
+    text-align: left;
+}
+
+.tblAcademicLevel th:nth-child(2), 
+.tblAcademicLevel td:nth-child(2){
+    width: 60%;
+    text-align: left;
+}
+
+.tblAcademicLevel th:nth-child(3), 
+.tblAcademicLevel td:nth-child(3){
+    width: 20%;
+    text-align: left;
+}
+
+.tblAcademicLevel .action-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.tblAcademicLevel .action-buttons button{
+    width: 40%;
+    height: 70%;
+    padding: 0.3rem 0.6rem;
+    text-align: center;
+    border: none;
+    border-radius: 0.7rem;
+    background-color: #253275;
+    color: #fffbfb;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.tblAcademicLevel .action-buttons > :nth-child(1){
+    background-color: #0c6cac;
+}
+
+.tblAcademicLevel .action-buttons > :nth-child(1):hover{
+    box-shadow: 0px 0px 8px #0c6cac;
+}
+
+.tblAcademicLevel .action-buttons > :nth-child(2){
+    background-color: #b31a1a;
+}
+
+.tblAcademicLevel .action-buttons > :nth-child(2):hover{
+    box-shadow: 0px 0px 8px #b31a1a;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem; 
+    justify-content: center; 
+}
+
+.action-buttons .btnActions {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem; 
+    width: auto;
+    height: auto; 
+}
+
+/* MODAL */
+
+.modalPage{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.384);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    position: fixed;
+}
+
+.modalPage .modalPageContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: auto;
+    background-color: #fffbfb;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.151);
+}
+
+.modalPage .modalPageContent .modalHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    background-color: #253275;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    color: #fffbfb;
+}
+
+.modalPage .modalPageContent form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.modalPage .modalPageContent form span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    height: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    
+}
+
+.modalPage .modalPageContent form span label{
+    width: 40%;
+}
+
+.modalPage .modalPageContent form span input{
+    width: 60%;
+    height: 100%;
+    border: none;
+    border-radius: 0.7rem;
+    background-color: #ececec;
+    padding: 0.5rem 1rem 0.5rem 1rem; 
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+}
+
+#btnSave{
+    background-color: #253275;
+    transition: box-shadow 0.3s ease;
+}
+
+#btnSave:hover{
+    box-shadow: 0px 0px 8px #253275;
+}
+
+#btnCancel{
+    background-color: #e64343;
+    transition: box-shadow 0.3s ease;
+}
+
+#btnCancel:hover{
+    box-shadow: 0px 0px 8px #e64343;
+}
+
+.modalPage .modalPageContent form span button{
+    width: 30%;
+    height: 2.5rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    text-align: center;
+    border: none;
+    border-radius: 0.7rem;
+    background-color: #253275;
+    color: #fffbfb;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* RELOAD */
+
+.reload {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 8%;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+}
+
+.reload button{
+    width: 3%;
+    height:70%;
+    text-align: center;
+    border: none;
+    border-radius: 1rem;
+    background-color: #253275;
+    color: #fffbfb;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.reload button:hover{
+    box-shadow: 0px 0px 8px #4055c2;
+}

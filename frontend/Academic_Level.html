@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Record</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../client/assets/css/global.css">
+  <link rel="stylesheet" href="../client/assets/css/AcademicLevel.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <div class="menu">
+            <ul>
+                <li><a href="../client/Dashboard.html">Dashboard</a></li>
+                <li><a href="../client/Student.html">Student</a></li>
+                <li><a class="active" href="../client/Academic_Level.html">Academic Level</a></li>
+                <li><a href="../client/Academic_Year.html">Academic Year</a></li>
+                <li><a href="../client/Course.html">Courses</a></li>
+            </ul>
+        </div>
+        <div class="account">
+            <ul>
+                <li><a href="#" id="btnLogout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="main-content-wrapper">
+            <div class="banner">
+                STUDENT RECORD MANAGEMENT SYSTEM
+            </div>
+            <div class="data">
+                <div class="page_detail">
+                    <button id="btnAdd">CREATE NEW</button>
+                </div>
+                <div class="filters">
+                    <span>
+                        <label for="textInputSearch">SEARCH BY NAME</label>
+                        <input type="text" id="textInputSearch" placeholder="Search for Name">
+                    </span>
+                    <span>
+                        <span class="filterButton">
+                            <button id="btnSearch"><i class="fa-solid fa-magnifying-glass"> SEARCH</i></button>
+                            <button id="btnClear"><i class="fa-solid fa-x"> CLEAR</i></button>
+                        </span>
+                    </span>
+                </div>
+                <div class="table_wrapper">
+                    <div class="pagination">
+                        <p id="itemNumber"></p>
+                        <button id="btnPrev"><i class="fa-solid fa-arrow-left"></i></button>
+                        <span id="pageInfo"></span>
+                        <button id="btnNext"><i class="fa-solid fa-arrow-right"></i></button>       
+                    </div>
+                    <table id="tblAcademicLevel" class="tblAcademicLevel">
+                        <thead>
+                            <tr>
+                                <th>ACADEMIC LEVEL ID</th>
+                                <th>ACADEMIC LEVEL NAME</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                    <div class="reload">
+                        <button id="btnReload"><i class="fa-solid fa-rotate-right"></i></button>
+                    </div>
+                </div>
+                <div class="modalPage" id="modalPage">
+                    <div class="modalPageContent">
+                        <span class="modalHeader">
+                            <h2>ACADEMIC LEVEL FORM</h2>
+                        </span>
+                        <form class="modalForm" id="modalForm">
+                            <span id="IdSpan">
+                                <label for="academicLevelId">Academic Level ID:</label>
+                                <input type="textarea" id="academicLevelId" disabled>
+                            </span>
+                            <span>  
+                                <label for="academicLevelName">Academic Level Name:</label>
+                                <input type="text" id="academicLevelName" class="academicLevelName">
+                            </span>
+                            <span>
+                                <button type="submit" id="btnSave">Save</button>
+                                <button id="btnCancel">Cancel</button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="../client/assets/scripts/AcademicLevel.js"></script>
+  <script src="../client/assets/scripts/global.js"></script>
+</body>
+</html>

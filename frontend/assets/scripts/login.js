@@ -25,7 +25,7 @@ document.getElementById('btnLogin').addEventListener('click', (event) => {
     .then((data) => {
         if (data.token) {
             localStorage.setItem('jwtToken', data.token);
-            window.location.href = 'dashboard.html';
+            window.location.href = 'Dashboard.html';
         } else {
             throw new Error('No token received');
         }

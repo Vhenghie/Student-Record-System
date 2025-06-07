@@ -4,6 +4,8 @@ let academicYears = [];
 let isNewItem = false;
 let currentItem = null;
 
+const baseURL = "https://student-record-system.runasp.net/api/AcademicYear";
+
 const editModal = document.getElementById("modalPage");
 let academicYearIdModal = document.getElementById("academicYearId");
 let academicYearNameModal = document.getElementById("academicYearName");
@@ -14,10 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const token = localStorage.getItem('jwtToken');
     if (!token) {
-        window.location.href = 'login.html';
+        window.location.href = 'Login.html';
     }
 
-    getData("https://localhost:7064/api/AcademicYear", null);
+    getData(`${baseURL}`, null);
     populateSelect("academicLevelFilter", "AcademicLevel", "academic_level");
 
     document.getElementById('btnPrev').addEventListener("click", (event) => {
@@ -63,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('btnReload').addEventListener("click", (event) => {
         event.preventDefault();
-        getData("https://localhost:7064/api/AcademicYear", null);
+        getData(`${baseURL}`, null);
         console.log("Reloaded");
     });
 });
@@ -97,7 +99,7 @@ const formSubmit = (isNew) =>{
     const Name = document.getElementById("academicYearName").value;
     const levelId = document.getElementById("academicYearLevel").value;
 
-    let url = `https://localhost:7064/api/AcademicYear`;
+    let url = `${baseURL}`;
 
     if (isNew) newItem = true;
     else{
@@ -131,7 +133,7 @@ const formSubmit = (isNew) =>{
         editModal.style.display = "none";
         isNewItem = false;
         currentItem = null;
-        getData("https://localhost:7064/api/AcademicYear", null);
+        getData(`${baseURL}`, null);
     });
 };
 
@@ -183,7 +185,7 @@ const populateSelect = (selectId, selection, root_name) => {
     select.innerHTML = "";
 
     return new Promise((resolve, reject) => {
-        fetch(`https://localhost:7064/api/${selection}`, {
+        fetch(`student-record-system.runasp.net/api/${selection}`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`
                 }
@@ -237,7 +239,7 @@ const onEditClick = async(id, name, levelId) => {
 };
 
 const onDeleteClick = (id) => {
-    fetch(`https://localhost:7064/api/AcademicYear/${id}`, {
+    fetch(`${baseURL}/${id}`, {
         method: 'DELETE', 
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`

@@ -8,6 +8,8 @@ let currentItem = null;
 let academicYearSelectOptions = [];
 let courseYearSelectOptions = [];
 
+const baseURL = "https://student-record-system.runasp.net/api/Student";
+
 const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const phonePattern = /^05[0|2|4|5|6|8][0-9]{7}$/;
 
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = 'login.html';
     }
 
-    getData("https://localhost:7064/api/Student", null);
+    getData(`${baseURL}`, null);
 
     document.getElementById('btnPrev').addEventListener("click", (event) => {
         event.preventDefault();
@@ -72,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('btnReload').addEventListener("click", (event) => {
         event.preventDefault();
-        getData("https://localhost:7064/api/Student", null);
+        getData(`${baseURL}`, null);
         console.log("Reloaded");
     });
 
@@ -115,7 +117,7 @@ const getData = (url, payload) => {
 
 const formSubmit = (isNew) =>{
 
-    let url = `https://localhost:7064/api/Student`;
+    let url = `${baseURL}`;
 
     if (isNew) newItem = true;
     else{
@@ -160,7 +162,7 @@ const formSubmit = (isNew) =>{
         editModal.style.display = "none";
         isNewItem = false;
         currentItem = null;
-        getData("https://localhost:7064/api/Student", null);
+        getData(`${baseURL}`, null);
     });
 };
 
@@ -297,7 +299,7 @@ const onEditClick = async(id) => {
 };
 
 const onDeleteClick = (id) => {
-    fetch(`https://localhost:7064/api/Student/${id}`, {
+    fetch(`${baseURL}/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`
@@ -337,7 +339,7 @@ const populateSelect = (selectId, selection, root_name) => {
     select.innerHTML = "";
 
     return new Promise((resolve, reject) => {
-        fetch(`https://localhost:7064/api/${selection}`, {
+        fetch(`https://student-record-system.runasp.net/api/${selection}`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`
                 }
@@ -371,7 +373,7 @@ const populateSelect = (selectId, selection, root_name) => {
 };
 
 const getStudentById = (id) => {
-    fetch(`https://localhost:7064/api/Student/${id}`, {
+    fetch(`${baseURL}/${id}`, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`
             }

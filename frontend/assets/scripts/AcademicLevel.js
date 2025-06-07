@@ -4,6 +4,8 @@ let academicLevels = [];
 let isNewItem = false;
 let currentItem = null;
 
+const baseURL = "https://student-record-system.runasp.net/api/";
+
 const editModal = document.getElementById("modalPage");
 const academicLevelIdModal = document.getElementById("academicLevelId");
 const academicLevelNameModal = document.getElementById("academicLevelName");
@@ -13,10 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const token = localStorage.getItem('jwtToken');
     if (!token) {
-        window.location.href = 'login.html';
+        window.location.href = 'Login.html';
     }
 
-    getData("https://localhost:7064/api/AcademicLevel", null);
+    getData(`${baseURL}AcademicLevel`, null);
 
     document.getElementById('btnPrev').addEventListener("click", (event) => {
         event.preventDefault();
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('btnReload').addEventListener("click", (event) => {
         event.preventDefault();
-        getData("https://localhost:7064/api/AcademicLevel", null);
+        getData(`${baseURL}AcademicLevel`, null);
         console.log("Reloaded");
     });
 });
@@ -94,7 +96,7 @@ const formSubmit = (isNew) =>{
     const Id = document.getElementById("academicLevelId").value;
     const Name = document.getElementById("academicLevelName").value;
 
-    let url = `https://localhost:7064/api/AcademicLevel`;
+    let url = `${baseURL}AcademicLevel`;
 
     if (isNew) newItem = true;
     else{
@@ -126,7 +128,7 @@ const formSubmit = (isNew) =>{
         editModal.style.display = "none";
         isNewItem = false;
         currentItem = null;
-        getData("https://localhost:7064/api/AcademicLevel", null);
+        getData(`${baseURL}AcademicLevel`, null);
     });
 };
 
@@ -190,7 +192,7 @@ const onEditClick = (id, name) => {
 };
 
 const onDeleteClick = (id) => {
-    fetch(`https://localhost:7064/api/AcademicLevel/${id}`, {
+    fetch(`${baseURL}AcademicLevel/${id}`, {
         method: 'DELETE',
         headers:{
             'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`

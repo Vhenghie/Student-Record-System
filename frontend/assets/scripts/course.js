@@ -4,6 +4,8 @@ let courses = [];
 let isNewItem = false;
 let currentItem = null;
 
+const baseURL = "https://student-record-system.runasp.net/api/Course";
+
 const editModal = document.getElementById("modalPage");
 const courseIdModal = document.getElementById("courseId");
 const courseNameModal = document.getElementById("courseName");
@@ -15,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const token = localStorage.getItem('jwtToken');
     if (!token) {
-        window.location.href = 'login.html';
+        window.location.href = 'Login.html';
     }
 
-    getData("https://localhost:7064/api/Course", null);
+    getData(`${baseURL}`, null);
     populateSelect("courseLevelSearch", "AcademicLevel", "academic_level");
     document.getElementById('btnPrev').addEventListener("click", (event) => {
         event.preventDefault();
@@ -63,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('btnReload').addEventListener("click", (event) => {
         event.preventDefault();
-        getData("https://localhost:7064/api/Course", null);
+        getData(`${baseURL}`, null);
         console.log("Reloaded");
     });
 });
@@ -98,7 +100,7 @@ const formSubmit = (isNew) =>{
     const courseLevel = document.getElementById("courseAcademicLevel").value;
     const courseDescription = document.getElementById("courseDescription").value;
 
-    let url = `https://localhost:7064/api/Course`;
+    let url = `${baseURL}`;
 
     if (isNew) newItem = true;
     else{
@@ -133,7 +135,7 @@ const formSubmit = (isNew) =>{
         editModal.style.display = "none";
         isNewItem = false;
         currentItem = null;
-        getData("https://localhost:7064/api/Course", null);
+        getData(`${baseURL}`, null);
     });
 };
 
@@ -186,7 +188,7 @@ const populateSelect = (selectId, selection, root_name) => {
     select.innerHTML = "";
 
     return new Promise((resolve, reject) => {
-        fetch(`https://localhost:7064/api/${selection}`, {
+        fetch(`student-record-system.runasp.net/api/${selection}`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`
                 }
@@ -241,7 +243,7 @@ const onEditClick = async(id, name, levelId, desc) => {
 };
 
 const onDeleteClick = (id) => {
-    fetch(`https://localhost:7064/api/Course/${id}`, {
+    fetch(`${baseURL}/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`

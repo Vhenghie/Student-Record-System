@@ -1,10 +1,12 @@
+const baseURL = "https://student-record-system.runasp.net/api/Auth/login";
+
 document.getElementById('btnLogin').addEventListener('click', (event) => {
     event.preventDefault();
 
     const user = document.getElementById('usernameInput').value;
     const pass = document.getElementById('passwordInput').value;
 
-    fetch('https://localhost:7064/api/Auth/login', {
+    fetch(`${baseURL}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

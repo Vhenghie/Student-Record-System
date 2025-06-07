@@ -1,11 +1,11 @@
-// Initialize Charts
 let courseChart, genderChart, levelChart;
+const baseURL = "https://student-record-system.runasp.net/api/Chart";
 
 document.addEventListener('DOMContentLoaded', function () {
 
   const token = localStorage.getItem('jwtToken');
   if (!token) {
-    window.location.href = 'login.html';
+    window.location.href = 'Login.html';
   }
 
   const courseCtx = document.getElementById('studentsPerCourseChart').getContext('2d');
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadCourseData() {
-  fetch('https://localhost:7064/api/Chart/students-per-course', {
+  fetch(`${baseURL}/students-per-course`, {
     headers: {
       'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`
     }
@@ -85,7 +85,7 @@ function loadCourseData() {
 }
 
 function loadGenderData() {
-  fetch('https://localhost:7064/api/Chart/students-per-gender', {
+  fetch(`${baseURL}/students-per-gender`, {
     headers: {
       'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`
     }
@@ -100,7 +100,7 @@ function loadGenderData() {
 }
 
 function loadLevelData() {
-  fetch('https://localhost:7064/api/Chart/students-per-level', {
+  fetch(`${baseURL}/students-per-level`, {
     headers: {
     'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`
     }

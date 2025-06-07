@@ -188,7 +188,7 @@ const populateSelect = (selectId, selection, root_name) => {
     select.innerHTML = "";
 
     return new Promise((resolve, reject) => {
-        fetch(`student-record-system.runasp.net/api/${selection}`, {
+        fetch(`https://student-record-system.runasp.net/api/${selection}`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`
                 }
